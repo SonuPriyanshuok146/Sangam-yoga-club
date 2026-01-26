@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SANGAM | Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+        body{background:linear-gradient(135deg,#e0f7f1,#fdfbfb);color:#333;}
+
+        header{
+            position:fixed;width:100%;top:0;left:0;
+            padding:20px 60px;
+            display:flex;justify-content:space-between;align-items:center;
+            background:rgba(255,255,255,0.7);
+            backdrop-filter:blur(10px);z-index:1000;
+        }
+
+        .logo-box{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            text-decoration:none;
+        }
+
+        .logo-box img{
+            width:64px;
+            height:64px;
+            border-radius:50%;
+            object-fit:cover;
+        }
+
+        .logo-box span{
+            font-size:28px;
+            font-weight:700;
+            color:#2b7a78;
+        }
+
+        nav a{
+            margin-left:25px;
+            text-decoration:none;
+            color:#333;
+            font-weight:500;
+        }
+        nav a:hover{color:#2b7a78;}
+
+        .hero{
+            height:100vh;
+            display:flex;
+            align-items:center;
+            padding:0 60px;
+            background:linear-gradient(rgba(0,0,0,0.35),rgba(0,0,0,0.35)),
+            url("./assets/images/IMG_7490.JPG") center/cover no-repeat;
+            color:white;
+        }
+
+        .hero-content h2{font-size:52px;margin-bottom:20px;}
+        .hero-content p{font-size:18px;margin-bottom:30px;}
+
+        .hero-content a{
+            padding:14px 32px;
+            background:#3aafa9;
+            color:white;
+            border-radius:30px;
+            text-decoration:none;
+        }
+
+        /* ===== Leadership Section ===== */
+        .leadership{
+            padding:80px 60px;
+            text-align:center;
+        }
+
+        .leadership h2{
+            font-size:36px;
+            color:#2b7a78;
+            margin-bottom:50px;
+        }
+
+        .leader-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:30px;
+    max-width:1100px;
+    margin:auto;
+    justify-items:center;
+}
+
+.leader-card{
+    width:100%;
+    max-width:260px;
+    background:white;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+/* Center ONLY when exactly 5 cards */
+.leader-grid:has(.leader-card:nth-child(5):last-child) 
+.leader-card:last-child{
+    grid-column:2 / span 2;
+}
+
+    /* Tablet */
+@media(max-width:1024px){
+    .leader-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+    .leader-grid .leader-card:last-child{
+        grid-column:auto;
+    }
+}
+
+/* Mobile */
+@media(max-width:600px){
+    .leader-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+
+        .leader-card:hover{
+            transform:translateY(-6px);
+        }
+
+        .leader-card img{
+            width:120px;
+            height:120px;
+            border-radius:50%;
+            object-fit:cover;
+            margin-bottom:15px;
+        }
+
+        .leader-card h3{
+            font-size:18px;
+            margin-bottom:5px;
+        }
+
+        .leader-card p{
+            font-size:14px;
+            color:#666;
+        }
+
+        .leader-card .role{
+            font-weight:600;
+            color:#2b7a78;
+            margin-top:6px;
+}
+
+        .leader-card .org{
+            font-size:13px;
+            color:#777;
+        }
+
+
+        footer{
+            background:#2b7a78;
+            color:white;
+            text-align:center;
+            padding:30px;
+        }
+
+        @media(max-width:768px){
+            header{padding:20px;}
+            .hero{padding:0 20px;}
+            .hero-content h2{font-size:38px;}
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <a href="index.html" class="logo-box">
+        <img src="./assets/images/logo.png" alt="SANGAM Logo">
+        <span>SANGAM</span>
+    </a>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="event.html">Events</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+</header>
+
+<!-- HERO SECTION (UNCHANGED) -->
+<div class="hero">
+    <div class="hero-content">
+        <h2>Find Your Inner Peace</h2>
+        <p>Experience the perfect balance of mind, body, and soul with our guided yoga sessions.</p>
+        <a href="journey.html">Start Your Journey</a>
+    </div>
+</div>
+
+<!-- LEADERSHIP SECTION -->
+<section class="leadership">
+    <h2>Leadership & Guidance</h2>
+
+    <div class="leader-grid">
+
+        <!-- Director -->
+        <div class="leader-card">
+            <img src="./assets/images/logo.png" alt="Director NIT Delhi">
+            <h3>Prof. (Dr.) Ajay Kumar Sharma</h3>
+            <p class="role">Director</p>
+            <p class="org">National Institute of Technology Delhi</p>
+        </div>
+
+        <!-- Faculty Coordinator -->
+        <div class="leader-card">
+            <img src="./assets/images/logo.png" alt="Faculty Coordinator">
+            <h3>Dr. Amandeep Kaur</h3>
+            <p class="role">Faculty Coordinator</p>
+            <p class="org">SANGAM – Yoga Club</p>
+        </div>
+
+        <!-- Faculty Co-Coordinator -->
+        <div class="leader-card">
+            <img src="./assets/images/logo.png" alt="Faculty Co-Coordinator">
+            <h3>Dr. Manish Verma</h3>
+            <p class="role">Faculty Co-Coordinator</p>
+            <p class="org">SANGAM – Yoga Club</p>
+        </div>
+
+        <!-- SASO -->
+        <div class="leader-card">
+            <img src="./assets/images/logo.png" alt="Sports Section Officer">
+            <h3>Mr. Anidev Singh</h3>
+            <p class="role">SASO</p>
+            <p class="org">Sports Section, NIT Delhi</p>
+        </div>
+
+        <!-- Coach -->
+        <div class="leader-card">
+            <img src="./assets/images/logo.png" alt="Yoga Coach">
+            <h3>Mr. Pawan Kumar</h3>
+            <p class="role">Yoga Coach</p>
+            <p class="org">SANGAM – Yoga Club, NIT Delhi</p>
+
+        </div>
+
+    </div>
+</section>
+
+
+<footer>
+    <p>© 2026 SANGAM Yoga Club | Breathe • Stretch • Heal</p>
+</footer>
+
+</body>
+</html>
