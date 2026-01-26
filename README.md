@@ -54,6 +54,9 @@ Yoga Coach dedicated to promoting holistic health through disciplined yoga pract
   - User login system  
   - Personalized yoga recommendations  
   - Performance and posture analysis (future scope)
+ 
+- **Additional Feature (Planned)**  
+  - News and data related to Yoga
 
 ---
 
