@@ -1,37 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>SANGAM – Contact</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
+<meta charset="UTF-8">
+<title>SANGAM | Contact</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="./assets/css/style.css">
+
 </head>
+
 <body>
 
 <header>
-    <h1>SANGAM</h1>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="team.html">Team</a>
-        <a href="event.html">Events</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<h1>SANGAM</h1>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="team.html">Team</a>
+<a href="event.html">Events</a>
+<a href="ai-bot.html">AI Coach</a>
+<a href="contact.html">Contact</a>
+</nav>
 </header>
 
-<section>
-    <h2>Contact Us</h2>
+<!-- HERO -->
 
-    <form><!-- use karna hai postgre or mysql -->
-        <input type="text" placeholder="Your Name" required><br>
-        <input type="email" placeholder="Your Email" required><br>
-        <textarea rows="4" placeholder="Your Message"></textarea><br>
-        <button type="submit">Send Message</button>
-    </form>
+<div class="hero">
+<div>
+<h2>Contact SANGAM</h2>
+<p>Connect with us for yoga sessions, guidance, or collaboration.</p>
+</div>
+</div>
+
+<!-- CONTACT SECTION -->
+
+<section>
+
+<h2>Get In Touch</h2>
+
+<p>
+Have any questions or want to join our yoga community?  
+Fill out the form below and we’ll respond soon.
+</p>
+
+<div class="contact-box">
+
+<form id="contactForm">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="email" name="email" placeholder="Your Email" required>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<select name="purpose" required>
+    <option value="">Select Purpose</option>
+    <option value="join">Join Yoga Club</option>
+    <option value="session">Yoga Session Enquiry</option>
+    <option value="collaboration">Collaboration</option>
+    <option value="feedback">Feedback</option>
+    <option value="other">Other</option>
+</select>
+
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+
+<button type="submit">Send Message</button>
+<div class="loader" id="loader"></div>
+
+</form>
+<div id="toast">Message Sent Successfully!!</div>
+
+</div>
+
 </section>
 
 <footer>
-    <p>© 2026 SANGAM - Yoga Club | NIT Delhi</p>
+<p>© 2026 SANGAM Yoga Club | NIT Delhi</p>
 </footer>
+
+<script>
+const form=document.getElementById("contactForm");
+const loader=document.getElementById("loader");
+const toast=document.getElementById("toast");
+
+form.addEventListener("submit",async(e)=>{
+e.preventDefault();
+
+loader.style.display="block";
+
+const data=Object.fromEntries(new FormData(form).entries());
+
+const res=await fetch("/contact",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify(data)
+});
+
+loader.style.display="none";
+
+if(res.ok){
+form.reset();
+toast.style.display="block";
+setTimeout(()=>toast.style.display="none",3000);
+}else{
+alert("Error submitting form");
+}
+});
+</script>
 
 </body>
 </html>

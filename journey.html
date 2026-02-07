@@ -1,50 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Start Your Journey | SANGAM</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Your Journey | SANGAM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <style>
-        *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-        body{background:#f6faf9;color:#333;}
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins;}
 
-        header{
-            background:#2b7a78;
-            padding:20px 60px;
-            display:flex;justify-content:space-between;align-items:center;
-        }
-        header h1{color:white;}
-        nav a{color:white;margin-left:25px;text-decoration:none;}
+body{background:#f6faf9;}
 
-        section{padding:70px 60px;}
-        h2{text-align:center;color:#2b7a78;margin-bottom:40px;}
+header{
+background:#2b7a78;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-        .cards{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-            gap:30px;
-        }
+header h1{color:white;}
 
-        .card{
-            background:white;
-            padding:30px;
-            border-radius:20px;
-            box-shadow:0 10px 25px rgba(0,0,0,0.1);
-        }
+nav a{
+color:white;
+margin-left:25px;
+text-decoration:none;
+font-weight:500;
+}
 
-        .card h3{color:#2b7a78;margin-bottom:10px;}
-        .mantra{font-style:italic;color:#444;margin:10px 0;}
+section{padding:60px;}
 
-        footer{
-            background:#2b7a78;
-            color:white;
-            text-align:center;
-            padding:25px;
-        }
-    </style>
+h2{text-align:center;color:#2b7a78;margin-bottom:40px;}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+}
+
+.card h3{color:#2b7a78;margin-bottom:10px;}
+
+.mantra{font-style:italic;margin-bottom:10px;color:#444}
+
+/* AI CHAT */
+
+.chatbox{
+margin-top:60px;
+background:white;
+border-radius:15px;
+padding:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.15);
+max-width:700px;
+margin-left:auto;
+margin-right:auto;
+}
+
+#chat{
+height:200px;
+overflow:auto;
+margin-bottom:15px;
+}
+
+.user{color:#2b7a78;font-weight:600;}
+.bot{color:#444;margin-bottom:10px;}
+
+.chatbox input{
+width:80%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+.chatbox button{
+padding:10px 20px;
+border:none;
+background:#2b7a78;
+color:white;
+border-radius:8px;
+cursor:pointer;
+}
+
+footer{
+margin-top:60px;
+background:#2b7a78;
+color:white;
+text-align:center;
+padding:20px;
+}
+</style>
 </head>
 
 <body>
@@ -53,93 +104,92 @@
     <h1>SANGAM</h1>
     <nav>
         <a href="index.html">Home</a>
+        <a href="team.html">Team</a>
+        <a href="event.html">Events</a>
+        <a href="ai-bot.html">AI Coach</a>
+        <a href="contact.html">Contact</a>
     </nav>
 </header>
 
+
 <section>
-    <h2>🕉️ Your Daily Yogic Journey</h2>
 
-    <div class="cards">
+<h2>🕉 Your Daily Yogic Journey</h2>
 
-        <!-- Morning Wake -->
-        <div class="card">
-            <h3>🌅 प्रातः जागरण (5:00 AM)</h3>
-            <div class="mantra">
-                कराग्रे वसते लक्ष्मीः करमध्ये सरस्वती।<br>
-                करमूले तु गोविन्दः प्रभाते करदर्शनम्॥
-            </div>
-            <p>
-                सुबह उठते ही हथेलियों को देखकर यह मंत्र जपें।  
-                यह सकारात्मक ऊर्जा और शुभता का आह्वान करता है।
-            </p>
-        </div>
+<div class="cards">
 
-        <!-- Bath -->
-        <div class="card">
-            <h3>🚿 स्नान (5:30 AM)</h3>
-            <div class="mantra">
-                गंगे च यमुने चैव गोदावरी सरस्वती।<br>
-                नर्मदे सिन्धु कावेरी जलेऽस्मिन् सन्निधिं कुरु॥
-            </div>
-            <p>
-                स्नान से पूर्व यह मंत्र पढ़ें।  
-                शरीर और मन दोनों की शुद्धि होती है।
-            </p>
-        </div>
+<div class="card">
+<h3>🌅 Morning</h3>
+<div class="mantra">ॐ सूर्याय नमः</div>
+<p>Wake early, gratitude, light stretching.</p>
+</div>
 
-        <!-- Yoga -->
-        <div class="card">
-            <h3>🧘 योगाभ्यास (6:00 - 7:00 AM)</h3>
-            <div class="mantra">
-                ॐ सूर्याय नमः
-            </div>
-            <p>
-                सूर्य नमस्कार, प्राणायाम और ध्यान करें।  
-                यह दिनभर ऊर्जा प्रदान करता है।
-            </p>
-        </div>
+<div class="card">
+<h3>🧘 Yoga</h3>
+<div class="mantra">योगः कर्मसु कौशलम्</div>
+<p>Surya Namaskar, pranayama, meditation.</p>
+</div>
 
-        <!-- Study -->
-        <div class="card">
-            <h3>📚 अध्ययन (9:00 AM)</h3>
-            <div class="mantra">
-                सरस्वती नमस्तुभ्यं वरदे कामरूपिणि।
-            </div>
-            <p>
-                पढ़ाई से पहले यह मंत्र पढ़ें।  
-                एकाग्रता और स्मरण शक्ति बढ़ती है।
-            </p>
-        </div>
+<div class="card">
+<h3>📚 Study</h3>
+<div class="mantra">सरस्वती नमस्तुभ्यम्</div>
+<p>Focused learning.</p>
+</div>
 
-        <!-- Evening -->
-        <div class="card">
-            <h3>🌇 संध्या ध्यान (6:30 PM)</h3>
-            <div class="mantra">
-                ॐ शान्तिः शान्तिः शान्तिः
-            </div>
-            <p>
-                संध्या समय ध्यान करने से मानसिक शांति मिलती है।
-            </p>
-        </div>
+<div class="card">
+<h3>🌇 Evening</h3>
+<div class="mantra">ॐ शान्तिः</div>
+<p>Relaxation and reflection.</p>
+</div>
 
-        <!-- Night -->
-        <div class="card">
-            <h3>🌙 शयन (10:00 PM)</h3>
-            <div class="mantra">
-                राम रामेति रामेति रमे रामे मनोरमे।
-            </div>
-            <p>
-                सोने से पहले यह मंत्र जपें।  
-                नींद गहरी और शांत होती है।
-            </p>
-        </div>
+<div class="card">
+<h3>🌙 Night</h3>
+<div class="mantra">राम रामेति</div>
+<p>Early sleep and gratitude.</p>
+</div>
 
-    </div>
+</div>
+
+<!-- AI CHAT -->
+
+<div class="chatbox" id="ai">
+<h3 style="text-align:center;color:#2b7a78;">🤖 AI Yoga Coach</h3>
+
+<div id="chat"></div>
+
+<input id="prompt" placeholder="Ask yoga question..." />
+<button onclick="askAI()">Send</button>
+</div>
+
 </section>
 
 <footer>
-    <p>© 2026 SANGAM Yoga Club | NIT Delhi</p>
+© 2026 SANGAM Yoga Club | NIT Delhi
 </footer>
+
+<script>
+async function askAI(){
+
+const prompt = document.getElementById("prompt").value;
+if(!prompt) return;
+
+const chat = document.getElementById("chat");
+chat.innerHTML += `<div class="user">You: ${prompt}</div>`;
+
+document.getElementById("prompt").value="";
+
+const res = await fetch("/ai",{
+method:"POST",
+headers:{ "Content-Type":"application/json" },
+body:JSON.stringify({prompt})
+});
+
+const data = await res.json();
+
+chat.innerHTML += `<div class="bot">AI: ${data.reply}</div>`;
+chat.scrollTop = chat.scrollHeight;
+}
+</script>
 
 </body>
 </html>

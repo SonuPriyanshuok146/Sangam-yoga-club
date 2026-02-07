@@ -41,6 +41,7 @@
         <a href="index.html">Home</a>
         <a href="team.html" class="active">Team</a>
         <a href="event.html">Events</a>
+        <a href="ai-bot.html">AI Coach</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
@@ -60,18 +61,30 @@
             <img src="./assets/images/Saurab.jpeg" alt="Saurabh Kumar">
             <h4>Saurabh Kumar</h4>
             <p class="role">DGS</p>
+            <div class="social">
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
         </div>
 
         <div class="team-card">
             <img src="./assets/images/Sourab.png" alt="Sourav Chauhan">
             <h4>Sourav Chauhan</h4>
             <p class="role">DGS</p>
+            <div class="social">
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
         </div>
 
         <div class="team-card">
             <img src="./assets/images/logo.png" alt="Anasuya Dalabehera">
             <h4>Anasuya Dalabehera</h4>
             <p class="role">DGS</p>
+            <div class="social">
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
         </div>
     </div>
 
@@ -82,6 +95,10 @@
             <img src="./assets/images/Chatinya.png" alt="Chaitanya">
             <h4>Chaitanya Kumar Saini</h4>
             <p class="role">Executive</p>
+            <div class="social">
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
         </div>
 
         <div class="team-card">
@@ -94,6 +111,10 @@
             <img src="./assets/images/logo.png" alt="Abheshik">
             <h4>Abhishek Kumar</h4>
             <p class="role">Executive</p>
+            <div class="social">
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
         </div>
     </div>
 
@@ -104,12 +125,20 @@
             <img src="./assets/images/Priyanshu.jpg" alt="Priyanshu">
             <h4>Priyanshu Kumar</h4>
             <p class="role">Volunteer</p>
+            <div class="social">
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
         </div>
 
         <div class="team-card">
             <img src="./assets/images/Ankur.png" alt="Ankur">
             <h4>Ankur</h4>
             <p class="role">Volunteer</p>
+            <div class="social">
+        <a href="#" target="_blank">LinkedIn</a>
+        <a href="#" target="_blank">Instagram</a>
+    </div>
         </div>
 
         <!-- Add remaining members here -->
@@ -120,6 +149,30 @@
 <footer>
     <p>© 2026 SANGAM – Yoga Club, NIT Delhi</p>
 </footer>
+
+<div class="modal" id="profileModal">
+  <div class="modal-content">
+    <img id="modalImg">
+    <h3 id="modalName"></h3>
+    <p id="modalRole"></p>
+    <button class="close" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.team-card').forEach(card=>{
+ card.onclick=()=>{
+   document.getElementById("profileModal").style.display="flex";
+   document.getElementById("modalImg").src=card.querySelector("img").src;
+   document.getElementById("modalName").innerText=card.querySelector("h4").innerText;
+   document.getElementById("modalRole").innerText=card.querySelector(".role").innerText;
+ }
+});
+
+function closeModal(){
+ document.getElementById("profileModal").style.display="none";
+}
+</script>
 
 </body>
 </html>

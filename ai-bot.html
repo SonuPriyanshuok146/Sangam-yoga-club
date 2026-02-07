@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>AI Yoga Coach | SANGAM</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+
+<header>
+<h1>SANGAM</h1>
+<nav>
+<a href="index.html">Home</a>
+<a href="team.html">Team</a>
+<a href="event.html">Events</a>
+<a href="ai-bot.html" class="active">AI Coach</a>
+<a href="contact.html">Contact</a>
+</nav>
+</header>
+
+<section class="ai-section">
+
+<h2>🧘 SANGAM AI Yoga Assistant</h2>
+<p class="ai-sub">Ask anything about yoga, health & daily routine</p>
+
+<div class="chat-box">
+
+<div id="chat"></div>
+
+<div class="chat-input">
+<input id="msg" placeholder="Ask your yoga question...">
+<button onclick="send()">Send</button>
+</div>
+
+</div>
+
+</section>
+
+<footer>
+<p>© 2026 SANGAM Yoga Club | NIT Delhi</p>
+</footer>
+
+<script>
+
+async function send(){
+
+const msgInput=document.getElementById("msg");
+const chat=document.getElementById("chat");
+
+if(!msgInput.value) return;
+
+chat.innerHTML+=`
+<div class="user-msg">
+<span>${msgInput.value}</span>
+</div>
+`;
+
+const userText=msgInput.value;
+msgInput.value="";
+
+const res=await fetch("/ai",{
+method:"POST",
+headers:{'Content-Type':'application/json'},
+body:JSON.stringify({prompt:userText})
+});
+
+const data=await res.json();
+
+chat.innerHTML+=`
+<div class="bot-msg">
+<span style="white-space:pre-line">${data.reply}</span>
+</div>
+`;
+
+chat.scrollTop=chat.scrollHeight;
+}
+
+</script>
+
+</body>
+</html>
