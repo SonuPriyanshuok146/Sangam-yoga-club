@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static(__dirname));
+app.use(express.static(path.join(__dirname, "../public")));
 
 /* ================= GEMINI AI ================= */
 
@@ -56,7 +56,7 @@ End with: "Tell me morning or evening?"
 User says:
 `;
 
-     const result = await model.generateContent(systemPrompt + req.body.prompt);
+    const result = await model.generateContent(systemPrompt + req.body.prompt);
 
     //   const result = await model.generateContent(prompt);
     //  console.log(result);
@@ -78,7 +78,6 @@ const pool = new Pool({
   port: process.env.DB_PORT,
 });
 
-
 /* ================= EMAIL ================= */
 
 const transporter = nodemailer.createTransport({
@@ -92,7 +91,7 @@ const transporter = nodemailer.createTransport({
 /* ================= FRONTEND ================= */
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "../public/index.html"));
 });
 
 /* ================= CONTACT FORM ================= */
