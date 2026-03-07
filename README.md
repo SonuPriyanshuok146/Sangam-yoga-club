@@ -37,13 +37,6 @@ Yoga Coach dedicated to promoting holistic health through disciplined yoga pract
 ---
 
 ## 🚀 Future Enhancements
-- **PostgreSQL Database**  
-  - Store contact form data securely  
-  - Manage user queries and feedback  
-
-- **Yoga Pose API Integration**  
-  - Provide information about yoga poses  
-  - Show benefits, steps, and precautions for each pose  
 
 - **AI/ML-Based Yoga Assistant**  
   - Yoga-specific chatbot  
